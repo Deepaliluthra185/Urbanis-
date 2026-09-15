@@ -1,0 +1,31 @@
+{
+  "summary": "Full backend + frontend regression for UrbanisAI. Backend: 22/22 pytest passing (auth, catalog/regulations/suppliers, project CRUD, dashboard, all 6 AI agents including live Gemini 3.1 Pro via THOT/IRIS/LYRA and data-gap flags). Frontend: full 4-step workflow validated end-to-end via Playwright — login, dashboard stats + presets + manual create + delete, site validation (compliant SITE APPROVED, flood/protected HARD VETO disabling proceed, determinism confirmed), design DnD (3 modules dropped, live totals € 53,520 / 2,240 kg CO2e / 56 m² updated correctly), AI Formulation Run-Sequence with LYRA completing in ~60s and KAEL citations + TERRA suppliers rendering, Project Summary + client-side PDF (Nordic_Modular_Quad_dossier.pdf downloaded), step-indicator nav-step-1..4 navigation, Local Sourcing radius/type filters + Connect toast.",
+  "backend_issues": {"critical": [], "minor": []},
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": [
+      {"screen": "Dialogs (New Project modal)", "issues": ["Radix DialogContent missing Description / aria-describedby — a11y console warning (non-blocking)."]}
+    ]
+  },
+  "test_report_links": ["/app/backend/tests/backend_test.py", "/app/test_reports/pytest/pytest_results.xml"],
+  "action_items": [
+    "Optional: add <DialogDescription> to New Project modal to silence Radix a11y warning."
+  ],
+  "critical_code_review_comments": [
+    "auth.py uses os.environ['JWT_SECRET'] directly — good, no default. bcrypt hashes generated fresh (start with $2b$). seed_admin correctly updates password if changed.",
+    "server.py projects endpoints correctly project away Mongo _id via projection.",
+    "SiteValidationPage validatePolygon is fully deterministic (turf booleanIntersects) — confirmed by identical metrics on repeated preset clicks.",
+    "DesignCostingPage uses debounced (500ms) PUT /api/projects for design persistence — acceptable, but note that if user navigates away within 500ms the save may not fire.",
+    "AiFormulationPage runAll iterates sequentially — matches spec; correctly awaits each agent so LYRA sees prior results in DB.",
+    "ProjectSummaryPage jsPDF client-side generation works and produces named file."
+  ],
+  "updated_files": ["/app/backend/tests/backend_test.py"],
+  "success_rate": {"backend": "100% (22/22)", "frontend": "100% of tested flows"},
+  "test_credentials": "admin@urbanis.ai / urbanis2025 (seeded, working)",
+  "seed_data_creation": "Created transient TEST_ prefixed projects during tests, cleaned up via DELETE.",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "All 6 AI agents work including live Gemini calls; LYRA typically completes within 45–60s after run-sequence. If retesting, allow up to 3 minutes for the full agent chain. DnD via Playwright drag_and_drop works reliably on this app (HTML5 native). data-testids exist for palette-<id>, grid-cell-<n>, placed-<id>, material-select-<n>, run-<agent>-btn, agent-card-<id>, nav-step-1..4, preset-*, radius-*, type-*, supplier-*, connect-*.",
+  "rca of the issue": "N/A — no defects found."
+}

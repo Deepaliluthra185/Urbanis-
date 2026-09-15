@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 import {
-  Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogFooter,
+  Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger, DialogFooter, DialogDescription,
 } from "../components/ui/dialog";
 
 const PRESETS = [
@@ -88,6 +88,7 @@ export default function DashboardPage() {
             <DialogContent className="bg-[#121215] border-zinc-800 text-zinc-100 rounded-none sm:max-w-md">
               <DialogHeader>
                 <DialogTitle className="font-display tracking-tight text-2xl">New Housing Project</DialogTitle>
+                <DialogDescription className="text-zinc-500 text-xs font-mono">Define the parcel context to begin the 4-step workflow.</DialogDescription>
               </DialogHeader>
               <div className="space-y-4 py-2">
                 <Input label="Project name" value={form.name} onChange={(v) => setForm({ ...form, name: v })} testid="project-name-input" placeholder="Nordic Modular Quad" />
