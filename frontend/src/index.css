@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --background: 240 6% 4%;
+        --foreground: 0 0% 98%;
+        --card: 240 6% 8%;
+        --card-foreground: 0 0% 98%;
+        --popover: 240 6% 8%;
+        --popover-foreground: 0 0% 98%;
+        --primary: 0 0% 98%;
+        --primary-foreground: 240 6% 6%;
+        --secondary: 240 4% 12%;
+        --secondary-foreground: 0 0% 98%;
+        --muted: 240 4% 14%;
+        --muted-foreground: 240 5% 65%;
+        --accent: 240 4% 16%;
+        --accent-foreground: 0 0% 98%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 240 4% 16%;
+        --input: 240 4% 16%;
+        --ring: 0 0% 83%;
+        --radius: 0.25rem;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+    body {
+        @apply bg-background text-foreground;
+        font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    }
+    h1, h2, h3, h4, .font-display {
+        font-family: 'Space Grotesk', sans-serif;
+    }
+    .font-mono, code {
+        font-family: 'JetBrains Mono', monospace;
+    }
+}
+
+.grid-bg {
+    background-image: radial-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 24px 24px;
+}
+
+.eyebrow {
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    font-size: 0.7rem;
+    color: hsl(240 5% 55%);
+}
+
+/* Leaflet dark tuning */
+.leaflet-container {
+    background: #0a0a0c;
+    font-family: 'JetBrains Mono', monospace;
+}
+.leaflet-tile { filter: grayscale(0.6) brightness(0.75) contrast(1.05); }
+.leaflet-bar a { background: #18181b; color: #fafafa; border-color: #27272a; }
+.leaflet-bar a:hover { background: #27272a; }
+.leaflet-draw-toolbar a { background-color: #18181b !important; }
+
+@keyframes beacon {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+.beacon { animation: beacon 1.2s ease-in-out infinite; }
+
+@keyframes fadeup {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.fadeup { animation: fadeup 0.4s ease-out both; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: #09090b; }
+::-webkit-scrollbar-thumb { background: #27272a; border-radius: 0; }
+::-webkit-scrollbar-thumb:hover { background: #3f3f46; }

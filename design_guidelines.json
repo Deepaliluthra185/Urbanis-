@@ -1,0 +1,193 @@
+{
+  "project_name": "UrbanisAI",
+  "archetype": "Swiss & High-Contrast Precision Architectural Systems (Archetype 4 with Technical Grid Nuances)",
+  "vibe": "Authoritative, architectural, precision GIS crossed with high-performance computational design tool. Clean monochrome foundation with razor-sharp borders, technical monospace data readouts, and status-isolated accents.",
+  "typography": {
+    "heading_font": "Space Grotesk or Syne or Outfit / sans-serif with font-black / font-bold tracking-tight",
+    "body_font": "IBM Plex Sans, Inter, or system-ui sans-serif",
+    "mono_font": "JetBrains Mono, Menlo, Consolas, monospace",
+    "scale": {
+      "h1": "text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight uppercase leading-none",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight",
+      "h3": "text-xl sm:text-2xl font-bold tracking-tight",
+      "h4": "text-lg sm:text-xl font-semibold",
+      "body": "text-base leading-relaxed text-zinc-300 dark:text-zinc-300",
+      "caption": "text-xs font-mono uppercase tracking-[0.2em] text-zinc-400"
+    }
+  },
+  "colors": {
+    "theme_preference": "dark_first_with_light_option",
+    "palette": {
+      "background": "#09090B",
+      "surface_base": "#121215",
+      "surface_elevated": "#18181B",
+      "surface_card": "#1C1C21",
+      "surface_border": "#27272A",
+      "surface_border_subtle": "#1F1F23",
+      "text_primary": "#FAFAFA",
+      "text_secondary": "#A1A1AA",
+      "text_muted": "#71717A",
+      "text_inverse": "#09090B",
+      "status_compliant": {
+        "text": "#22C55E",
+        "bg": "rgba(34, 197, 94, 0.12)",
+        "border": "#22C55E",
+        "label": "SITE APPROVED / COMPLIANT"
+      },
+      "status_veto": {
+        "text": "#EF4444",
+        "bg": "rgba(239, 68, 68, 0.14)",
+        "border": "#EF4444",
+        "label": "HARD VETO / ZONE CONFLICT"
+      },
+      "status_pending": {
+        "text": "#F59E0B",
+        "bg": "rgba(245, 158, 11, 0.14)",
+        "border": "#F59E0B",
+        "label": "GAP FLAGGED / PENDING"
+      },
+      "architectural_grid_lines": "rgba(255, 255, 255, 0.05)"
+    }
+  },
+  "visual_enhancers": {
+    "grid_pattern": "radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px) with background-size: 24px 24px",
+    "card_style": "1px solid #27272A border with bg-zinc-950/70 backdrop-blur-md rounded-none or rounded-sm shadow-none",
+    "corners": "Technical sharp or micro-chamfer (rounded-none to rounded-sm)",
+    "interactive_border": "hover:border-zinc-400 transition-colors duration-150",
+    "status_pulses": "ping-once or gentle-beacon for active AI agents"
+  },
+  "key_workflows_and_components": [
+    {
+      "step_id": 0,
+      "name": "Navigation & Step Indicator",
+      "component_path": "/app/frontend/src/components/HeaderNav.js",
+      "purpose": "Persistent top bar with brand mark, active project switcher, login/auth controls, and the 4-step workflow indicator (Site Validation → Design & Costing → AI Formulation → Summary/Export).",
+      "guidelines": "Never transparent. Solid black #09090B with 1px border-b border-zinc-800. Data testids: nav-step-1, nav-step-2, nav-step-3, nav-step-4, nav-auth-btn."
+    },
+    {
+      "step_id": 1,
+      "name": "Dashboard Overview",
+      "component_path": "/app/frontend/src/pages/DashboardPage.js",
+      "purpose": "Overview of active modular housing projects, compliance audit readiness, pending environmental vetoes, data gap flags, and New Project initiator modal.",
+      "guidelines": "Bento grid mode B (Data Density). Metric tiles, compliance status tags, and quick-launch pre-configured demo sites (e.g. 'Nordic Modular Quad', 'Harbor Eco-Terrace', 'Riverfront Veto Test')."
+    },
+    {
+      "step_id": 2,
+      "name": "Site Validation & GIS Engine",
+      "component_path": "/app/frontend/src/pages/SiteValidationPage.js",
+      "purpose": "Interactive Leaflet map allowing polygon boundary drawing, geodesic area/perimeter calculation, flood-zone overlays (100-year & 500-year), and protected ecological land reserves.",
+      "guidelines": "Immediate intersection detection: if polygon overlaps flood or ecological reserve, trigger a prominent red 'HARD VETO' banner with exact legal clause. If clear, display green 'SITE APPROVED' badge with max building footprint calculation."
+    },
+    {
+      "step_id": 3,
+      "name": "Interactive Modular Design & Costing Canvas",
+      "component_path": "/app/frontend/src/pages/DesignCostingPage.js",
+      "purpose": "Drag-and-drop 2D grid/isometric canvas to assemble modular housing blocks (Bedroom 18m², Kitchen 14m², Bathroom 8m², Living 24m², Solar Roof, Green Roof). Live materials database (Cross-Laminated Timber, Low-Carbon Geopolymer Concrete, Recycled Steel, Straw-Bale insulation) with unit costs, carbon coefficients (kg CO2e/m²), and comparison bar charts.",
+      "guidelines": "Live recalculation bar at the top or docked right: Total Units, Gross Floor Area, Estimated CapEx, Carbon Footprint vs Traditional Benchmark, with instant material swapping selector."
+    },
+    {
+      "step_id": 4,
+      "name": "AI Formulation Multi-Agent Engine",
+      "component_path": "/app/frontend/src/pages/AiFormulationPage.js",
+      "purpose": "Sequential 6-agent simulation execution: THOT (Site & Zoning Context), KAEL (Regulatory Code & Citations), IRIS (Modular Generative Design), CRONOS (Budget & Cashflow Sequencing), TERRA (Logistics & Low-Carbon Suppliers), LYRA (Municipal Dossier & Final Documentation).",
+      "guidelines": "Each agent possesses a dedicated terminal card showing status (Idle, Analyzing, Complete), streaming response log, confidence rating, and clickable 'DATA GAP FLAGGED' notice pills that expand resolution dialogues."
+    },
+    {
+      "step_id": 5,
+      "name": "Local Sourcing Directory",
+      "component_path": "/app/frontend/src/pages/LocalSourcingPage.js",
+      "purpose": "Browsable directory grid of certified modular prefab builders, off-site timber fabricators, environmental engineering consultants, and circular material suppliers.",
+      "guidelines": "Filter by radius (within 25km, 50km, 100km), material certification (FSC, Cradle-to-Cradle), and availability. Detail drawer with quote request action."
+    },
+    {
+      "step_id": 6,
+      "name": "Project Summary & Export Dossier",
+      "component_path": "/app/frontend/src/pages/ProjectSummaryPage.js",
+      "purpose": "Executive summary view consolidating site polygon metrics, compliance stamp, module breakdown, CapEx breakdown, carbon balance sheet, and a mock 'Download Municipal Dossier PDF' button.",
+      "guidelines": "Printable layout stylesheet compatibility, cryptographic hash verification badge, and export download simulator with sonner feedback."
+    }
+  ],
+  "image_urls": {
+    "hero_architecture": {
+      "url": "https://images.unsplash.com/photo-1479839672679-a46483c0e7c8?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MjJ8MHwxfHNlYXJjaHwyfHxtb2R1bGFyJTIwYXJjaGl0ZWN0dXJlJTIwYnVpbGRpbmclMjBmYWNhZGV8ZW58MHx8fHwxNzg5NDYzNDQ4fDA&ixlib=rb-4.1.0&q=85",
+      "description": "White precision modular architectural facade with geometric balconies",
+      "usage": "Landing hero showcase and Project Overview card header"
+    },
+    "modular_cantilever": {
+      "url": "https://images.unsplash.com/photo-1488972685288-c3fd157d7c7a?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2MjJ8MHwxfHNlYXJjaHwxfHxtb2R1bGFyJTIwYXJjaGl0ZWN0dXJlJTIwYnVpbGRpbmclMjBmYWNhZGV8ZW58MHx8fHwxNzg5NDYzNDQ4fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Geometric stacked pre-cast modular building structures",
+      "usage": "Design & Costing module presets showcase"
+    },
+    "aerial_plot_blueprint": {
+      "url": "https://images.unsplash.com/photo-1773215023063-e662ea91a69c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHwxfHx1cmJhbiUyMHNpdGUlMjBibHVlcHJpbnQlMjBhZXJpYWx8ZW58MHx8fHwxNzg5NDYzNDQ4fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Top-down orthographic aerial view of planned urban housing plots",
+      "usage": "Site Validation map thumbnail and preset boundary demo selector"
+    },
+    "aerial_construction_site": {
+      "url": "https://images.unsplash.com/photo-1762335799387-da7889c2b657?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTN8MHwxfHNlYXJjaHwyfHx1cmJhbiUyMHNpdGUlMjBibHVlcHJpbnQlMjBhZXJpYWx8ZW58MHx8fHwxNzg5NDYzNDQ4fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Aerial view of modular construction site staging area",
+      "usage": "Local Sourcing Logistics directory hero header"
+    },
+    "directory_engineer_1": {
+      "url": "https://images.unsplash.com/photo-1570470836811-78ef04bb23d3?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwxfHxhcmNoaXRlY3QlMjBlbmdpbmVlciUyMHBvcnRyYWl0fGVufDB8fHx8MTc4OTQ2MzQ1Mnww&ixlib=rb-4.1.0&q=85",
+      "description": "Lead structural modular engineer portrait",
+      "usage": "Local Sourcing Directory profile card (Apex Timber Prefab)"
+    },
+    "directory_architect_2": {
+      "url": "https://images.unsplash.com/photo-1575282366139-d605e098a825?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHw0fHxhcmNoaXRlY3QlMjBlbmdpbmVlciUyMHBvcnRyYWl0fGVufDB8fHx8MTc4OTQ2MzQ1Mnww&ixlib=rb-4.1.0&q=85",
+      "description": "Sustainable housing architect holding blueprints",
+      "usage": "Local Sourcing Directory profile card (Nordic Grid Architecture)"
+    },
+    "directory_logistics_3": {
+      "url": "https://images.unsplash.com/photo-1621905252472-943afaa20e20?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Njd8MHwxfHNlYXJjaHwzfHxhcmNoaXRlY3QlMjBlbmdpbmVlciUyMHBvcnRyYWl0fGVufDB8fHx8MTc4OTQ2MzQ1Mnww&ixlib=rb-4.1.0&q=85",
+      "description": "Modular off-site manufacturing supervisor",
+      "usage": "Local Sourcing Directory profile card (BioConcrete & Moduli)"
+    }
+  ],
+  "agents_specification": [
+    {
+      "id": "THOT",
+      "role": "Zoning & Site Context",
+      "focus": "Ingests GIS parcel boundaries, topography gradients, sunlight access, and density allowance under ISO 37120."
+    },
+    {
+      "id": "KAEL",
+      "role": "Regulatory Code & Citations",
+      "focus": "Verifies setback distances, fire egress codes, local timber construction caps (Eurocode 5 / IBC 2024), and flags flood-zone vetos."
+    },
+    {
+      "id": "IRIS",
+      "role": "Modular Layout Synthesis",
+      "focus": "Generates optimal stacking and clustering configurations for pre-engineered modules to maximize natural ventilation."
+    },
+    {
+      "id": "CRONOS",
+      "role": "Parametric Budget & Cashflow",
+      "focus": "Calculates bill-of-quantities (BOQ), off-site crane assembly schedules, foundation vs factory modular costs."
+    },
+    {
+      "id": "TERRA",
+      "role": "Embodied Carbon & Logistics",
+      "focus": "Computes A1-A5 cradle-to-gate carbon coefficients, transport miles, and matches local certified timber/hemp suppliers."
+    },
+    {
+      "id": "LYRA",
+      "role": "Municipal Submission Dossier",
+      "focus": "Compiles executive summary, geo-coordinates, environmental declaration (EPD), and submission-ready packet."
+    }
+  ],
+  "accessibility_and_testing": {
+    "mandatory_data_testid_rules": "All buttons, tab items, inputs, switches, modals, metric badges, agent trigger buttons, and canvas elements MUST have explicit data-testid attributes.",
+    "color_contrast": "White on #09090B exceeds 18:1 APCA. Status colors (Green #22C55E, Red #EF4444, Amber #F59E0B) have high contrast background tints with solid readable text.",
+    "keyboard_navigation": "Interactive canvas modules and agent buttons must respond to Enter/Space."
+  },
+  "instructions_to_main_agent": [
+    "Follow this exact monochrome architectural aesthetic: bold heavy sans-serif headings, sharp 1px borders, subtle 24px grid lines.",
+    "Use color STRICTLY for functional state indicators: Green for compliant/approved, Red for hard veto/conflict, Amber for data gap flags.",
+    "Include JWT auth mock/live state in the header navigation (with easy toggle or modal so all pages are accessible).",
+    "On Site Validation: support Leaflet drawing with interactive polygon tool or instant 1-click sample sites (Compliant site vs Flood-Zone Veto site).",
+    "On Interactive Design: allow adding/removing modules on grid canvas with immediate dynamic recalculation of total cost, embodied carbon, and floor area.",
+    "On AI Engine: simulate step-by-step agent execution with real architectural and regulatory citations (Eurocode 5, IBC 2024, EPD standard EN 15804).",
+    "Remember to include Sonner toast notifications and download simulation for municipal dossier PDF."
+  ]
+}
