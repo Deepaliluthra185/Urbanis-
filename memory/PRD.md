@@ -4,7 +4,7 @@
 Web app "UrbanisAI": an AI-driven platform to plan, validate, and cost modular, sustainable housing projects. Professional monochrome architectural design with status-only accent colors (green=compliant, red=veto, amber=pending). Core flows: Dashboard, Site Validation (Leaflet map + deterministic flood/ecology veto), Design & Costing (drag-and-drop modular canvas + live cost/carbon), AI Formulation (6 sequential agents), Local Sourcing directory, Project Summary/Export (PDF). 4-step progress indicator.
 
 ## User Choices
-- LLM: Gemini 3.1 Pro (via Emergent Universal Key, model `gemini-3.1-pro-preview`)
+- LLM: Google Gemini (native `google-genai` SDK, model `gemini-2.5-flash`)
 - Map: Leaflet + OpenStreetMap tiles
 - Auth: JWT email/password (Bearer token in localStorage)
 - PDF: client-side (jsPDF)

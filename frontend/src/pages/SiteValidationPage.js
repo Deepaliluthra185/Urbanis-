@@ -12,15 +12,15 @@ import {
 } from "lucide-react";
 import { toast } from "sonner";
 
-const CENTER = [52.369, 4.894];
+const CENTER = [28.6250, 77.2400];
 
-const FLOOD_ZONE = [[52.372, 4.900], [52.380, 4.900], [52.380, 4.912], [52.372, 4.912]];
-const PROTECTED_ZONE = [[52.358, 4.876], [52.366, 4.876], [52.366, 4.888], [52.358, 4.888]];
+const FLOOD_ZONE = [[28.618, 77.250], [28.648, 77.250], [28.648, 77.268], [28.618, 77.268]];
+const PROTECTED_ZONE = [[28.595, 77.210], [28.615, 77.210], [28.615, 77.228], [28.595, 77.228]];
 
 const PRESET_POLYGONS = {
-  compliant: { label: "Compliant Parcel", coords: [[52.366, 4.892], [52.371, 4.892], [52.371, 4.899], [52.366, 4.899]] },
-  flood: { label: "Flood-Zone Test", coords: [[52.374, 4.902], [52.379, 4.902], [52.379, 4.910], [52.374, 4.910]] },
-  protected: { label: "Protected-Land Test", coords: [[52.360, 4.878], [52.365, 4.878], [52.365, 4.886], [52.360, 4.886]] },
+  compliant: { label: "Compliant Parcel", coords: [[28.628, 77.232], [28.630, 77.232], [28.630, 77.234], [28.628, 77.234]] },
+  flood: { label: "Yamuna Floodplain Test", coords: [[28.628, 77.252], [28.630, 77.252], [28.630, 77.254], [28.628, 77.254]] },
+  protected: { label: "Delhi Ridge Forest Test", coords: [[28.602, 77.214], [28.604, 77.214], [28.604, 77.216], [28.602, 77.216]] },
 };
 
 function toTurf(latlngs) {
@@ -42,13 +42,13 @@ function validatePolygon(latlngs) {
   let veto_reason = null;
   if (inFlood && inProtected) {
     status = "veto";
-    veto_reason = "Parcel intersects BOTH a designated 100-year flood zone and a protected ecological reserve.";
+    veto_reason = "Parcel intersects BOTH the Yamuna 100-year flood zone and the Delhi Ridge protected reserve.";
   } else if (inFlood) {
     status = "veto";
-    veto_reason = "Parcel intersects a designated 100-year flood zone.";
+    veto_reason = "Parcel intersects the designated Yamuna River 100-year flood zone.";
   } else if (inProtected) {
     status = "veto";
-    veto_reason = "Parcel intersects a protected ecological land reserve.";
+    veto_reason = "Parcel intersects the Delhi Ridge protected ecological reserve.";
   }
   return { status, veto_reason, area_m2: Math.round(area), perimeter_m: Math.round(perimeter) };
 }
@@ -95,9 +95,9 @@ export default function SiteValidationPage() {
     }).addTo(map);
 
     L.polygon(FLOOD_ZONE, { color: "#3b82f6", weight: 1.5, dashArray: "5,5", fillColor: "#3b82f6", fillOpacity: 0.18 })
-      .bindTooltip("100-YEAR FLOOD ZONE", { permanent: false }).addTo(map);
+      .bindTooltip("YAMUNA 100-YEAR FLOODPLAIN", { permanent: false }).addTo(map);
     L.polygon(PROTECTED_ZONE, { color: "#22c55e", weight: 1.5, dashArray: "5,5", fillColor: "#22c55e", fillOpacity: 0.14 })
-      .bindTooltip("PROTECTED ECOLOGICAL RESERVE", { permanent: false }).addTo(map);
+      .bindTooltip("DELHI RIDGE ECOLOGICAL RESERVE", { permanent: false }).addTo(map);
 
     const drawn = new L.FeatureGroup();
     map.addLayer(drawn);
@@ -202,9 +202,9 @@ export default function SiteValidationPage() {
             <div className="border border-zinc-800 p-4">
               <p className="eyebrow mb-3">Sample parcels</p>
               <div className="space-y-2">
-                <PresetBtn onClick={() => applyPreset("compliant")} testid="preset-compliant" tone="green" label="Compliant Parcel" sub="Clear of all veto layers" />
-                <PresetBtn onClick={() => applyPreset("flood")} testid="preset-flood" tone="red" label="Flood-Zone Parcel" sub="Intersects 100-year flood" />
-                <PresetBtn onClick={() => applyPreset("protected")} testid="preset-protected" tone="red" label="Protected-Land Parcel" sub="Intersects ecological reserve" />
+                <PresetBtn onClick={() => applyPreset("compliant")} testid="preset-compliant" tone="green" label="Compliant Parcel" sub="Central Delhi · Clear of veto layers" />
+                <PresetBtn onClick={() => applyPreset("flood")} testid="preset-flood" tone="red" label="Yamuna Floodplain" sub="Intersects river flood zone" />
+                <PresetBtn onClick={() => applyPreset("protected")} testid="preset-protected" tone="red" label="Delhi Ridge Reserve" sub="Intersects ecological reserve" />
               </div>
             </div>
 

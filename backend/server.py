@@ -262,7 +262,7 @@ def run_cronos(project):
         return {"status": "gap", "gap": {"institution": "Quantity Surveyor Input",
                 "reason": "No design costed yet. Complete the Design & Costing step to generate the bill of quantities."}}
     return {"status": "complete", "confidence": 1.0, "totals": totals,
-            "output": f"Bill of quantities computed: EUR {totals['total_cost']:,.0f} CapEx across {totals['units']} modules ({totals['floor_area']:.0f} m2)."}
+            "output": f"Bill of quantities computed: ₹ {totals['total_cost']:,.0f} CapEx across {totals['units']} modules ({totals['floor_area']:.0f} m2)."}
 
 
 def run_terra(project):
@@ -285,7 +285,7 @@ async def run_lyra(project, agent_outputs):
     totals = project.get("design", {}).get("totals", {})
     prompt = (
         f"Project {project['name']} in {project['location']}. Site approved. "
-        f"CapEx EUR {totals.get('total_cost', 0):,.0f}, embodied carbon {totals.get('total_carbon', 0):,.0f} kg CO2e "
+        f"CapEx ₹ {totals.get('total_cost', 0):,.0f}, embodied carbon {totals.get('total_carbon', 0):,.0f} kg CO2e "
         f"({totals.get('carbon_saving_pct', 0)}% below concrete benchmark). "
         "Write a 100-word executive summary for a municipal submission dossier. Professional, confident, factual."
     )

@@ -12,9 +12,9 @@ import {
 } from "../components/ui/dialog";
 
 const PRESETS = [
-  { name: "Nordic Modular Quad", location: "Utrecht, Netherlands", description: "48-unit low-carbon timber quad on a cleared inner-city parcel.", population: "Young professionals & small families" },
-  { name: "Harbor Eco-Terrace", location: "Amsterdam, Netherlands", description: "Terraced modular housing near the harbor redevelopment district.", population: "Mixed-income key workers" },
-  { name: "Riverfront Veto Test", location: "Rotterdam, Netherlands", description: "Speculative riverfront parcel — likely intersects the 100-year flood zone.", population: "Demonstration parcel" },
+  { name: "Urbanis Modular Quad", location: "Bengaluru, India", description: "48-unit low-carbon modular timber quad on a cleared inner-city parcel.", population: "Young professionals & tech workforce" },
+  { name: "Harbor Eco-Terrace", location: "Navi Mumbai, India", description: "Terraced modular housing near coastal development district with eco-protection buffers.", population: "Mixed-income municipal workers" },
+  { name: "Riverfront Veto Test", location: "Yamuna Floodplain, Delhi, India", description: "Speculative riverfront parcel — intersects the 100-year municipal flood zone.", population: "Demonstration parcel" },
 ];
 
 export default function DashboardPage() {
@@ -91,8 +91,8 @@ export default function DashboardPage() {
                 <DialogDescription className="text-zinc-500 text-xs font-mono">Define the parcel context to begin the 4-step workflow.</DialogDescription>
               </DialogHeader>
               <div className="space-y-4 py-2">
-                <Input label="Project name" value={form.name} onChange={(v) => setForm({ ...form, name: v })} testid="project-name-input" placeholder="Nordic Modular Quad" />
-                <Input label="Location" value={form.location} onChange={(v) => setForm({ ...form, location: v })} testid="project-location-input" placeholder="Utrecht, Netherlands" />
+                <Input label="Project name" value={form.name} onChange={(v) => setForm({ ...form, name: v })} testid="project-name-input" placeholder="Urbanis Modular Quad" />
+                <Input label="Location" value={form.location} onChange={(v) => setForm({ ...form, location: v })} testid="project-location-input" placeholder="Bengaluru, India" />
                 <Input label="Target population" value={form.population} onChange={(v) => setForm({ ...form, population: v })} testid="project-population-input" placeholder="Young families" />
                 <div>
                   <span className="eyebrow block mb-1.5">Brief</span>
@@ -174,7 +174,7 @@ export default function DashboardPage() {
                 </div>
                 <div className="hidden sm:block text-right">
                   <div className="text-xs font-mono text-zinc-400">
-                    {p.design?.totals ? `EUR ${p.design.totals.total_cost.toLocaleString()}` : "Not costed"}
+                    {p.design?.totals ? `₹ ${p.design.totals.total_cost.toLocaleString('en-IN')}` : "Not costed"}
                   </div>
                   <div className="eyebrow">{p.design?.totals ? `${p.design.totals.units} modules` : "—"}</div>
                 </div>

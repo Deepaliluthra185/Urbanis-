@@ -4,7 +4,7 @@ import HeaderNav from "../components/HeaderNav";
 import { useProject } from "../context/ProjectContext";
 import api from "../lib/api";
 import {
-  BedDouble, CookingPot, Bath, Sofa, Sun, Trees, X, ArrowRight, Layers, Euro, Leaf, Ruler, GripVertical, ShieldAlert, Loader2,
+  BedDouble, CookingPot, Bath, Sofa, Sun, Trees, X, ArrowRight, Layers, IndianRupee, Leaf, Ruler, GripVertical, ShieldAlert, Loader2,
 } from "lucide-react";
 import { BarChart, Bar, XAxis, YAxis, Cell as RCell, ResponsiveContainer, Tooltip } from "recharts";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../components/ui/select";
@@ -198,7 +198,7 @@ export default function DesignCostingPage() {
           {/* Live totals */}
           <div className="space-y-4">
             <div className="grid grid-cols-1 gap-px bg-zinc-800 border border-zinc-800" data-testid="live-totals">
-              <BigMetric icon={Euro} label="Estimated CapEx" value={`€ ${Math.round(totals.cost).toLocaleString()}`} tone="text-zinc-100" />
+              <BigMetric icon={IndianRupee} label="Estimated CapEx" value={`₹ ${Math.round(totals.cost).toLocaleString('en-IN')}`} tone="text-zinc-100" />
               <BigMetric icon={Leaf} label="Embodied Carbon" value={`${Math.round(totals.carbon).toLocaleString()} kg CO₂e`} tone="text-green-400" />
               <BigMetric icon={Ruler} label="Gross Floor Area" value={`${totals.area} m²`} tone="text-zinc-100" />
             </div>
@@ -227,7 +227,7 @@ export default function DesignCostingPage() {
                   <BarChart data={costData} layout="vertical" margin={{ top: 0, right: 8, left: 0, bottom: 0 }}>
                     <XAxis type="number" hide />
                     <YAxis type="category" dataKey="name" width={72} tick={{ fill: "#a1a1aa", fontSize: 9, fontFamily: "JetBrains Mono" }} axisLine={false} tickLine={false} />
-                    <Tooltip contentStyle={{ background: "#18181b", border: "1px solid #27272a", borderRadius: 0, fontSize: 11 }} cursor={{ fill: "rgba(255,255,255,0.04)" }} formatter={(v) => `€ ${v.toLocaleString()}`} />
+                    <Tooltip contentStyle={{ background: "#18181b", border: "1px solid #27272a", borderRadius: 0, fontSize: 11 }} cursor={{ fill: "rgba(255,255,255,0.04)" }} formatter={(v) => `₹ ${v.toLocaleString('en-IN')}`} />
                     <Bar dataKey="value" fill="#fafafa" radius={0} />
                   </BarChart>
                 </ResponsiveContainer>

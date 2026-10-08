@@ -5,7 +5,7 @@ import HeaderNav from "../components/HeaderNav";
 import { useProject } from "../context/ProjectContext";
 import api from "../lib/api";
 import {
-  Download, ShieldCheck, ShieldAlert, Euro, Leaf, Ruler, Scale, Truck, FileText, Loader2, Stamp, Hash,
+  Download, ShieldCheck, ShieldAlert, IndianRupee, Leaf, Ruler, Scale, Truck, FileText, Loader2, Stamp, Hash,
 } from "lucide-react";
 import { toast } from "sonner";
 
@@ -59,9 +59,9 @@ export default function ProjectSummaryPage() {
 
     line("2 · DESIGN & COSTING", 12, true);
     line(`Modules: ${totals.units || 0}   Gross floor area: ${totals.floor_area || 0} m²`);
-    line(`Estimated CapEx: EUR ${(totals.total_cost || 0).toLocaleString()}`);
+    line(`Estimated CapEx: INR ${(totals.total_cost || 0).toLocaleString('en-IN')}`);
     line(`Embodied carbon: ${(totals.total_carbon || 0).toLocaleString()} kg CO2e  (${totals.carbon_saving_pct || 0}% below concrete benchmark)`);
-    (totals.breakdown || []).forEach((b) => line(`   - ${b.module} · ${b.material}: EUR ${b.cost.toLocaleString()} / ${b.carbon} kg CO2e`, 9, false, [90, 90, 90]));
+    (totals.breakdown || []).forEach((b) => line(`   - ${b.module} · ${b.material}: INR ${b.cost.toLocaleString('en-IN')} / ${b.carbon} kg CO2e`, 9, false, [90, 90, 90]));
     y += 6; rule();
 
     line("3 · REGULATORY CITATIONS (KAEL)", 12, true);
@@ -114,9 +114,9 @@ export default function ProjectSummaryPage() {
         </Section>
 
         {/* Design */}
-        <Section n="02" title="Design & Costing" icon={Euro}>
+        <Section n="02" title="Design & Costing" icon={IndianRupee}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-px bg-zinc-800 border border-zinc-800">
-            <Stat icon={Euro} label="CapEx" value={`€ ${(totals.total_cost || 0).toLocaleString()}`} />
+            <Stat icon={IndianRupee} label="CapEx" value={`₹ ${(totals.total_cost || 0).toLocaleString('en-IN')}`} />
             <Stat icon={Leaf} label="Carbon" value={`${(totals.total_carbon || 0).toLocaleString()} kg`} tone="text-green-400" />
             <Stat icon={Ruler} label="Floor area" value={`${totals.floor_area || 0} m²`} />
             <Stat icon={Leaf} label="vs benchmark" value={`${totals.carbon_saving_pct || 0}% ↓`} tone="text-green-400" />
@@ -126,7 +126,7 @@ export default function ProjectSummaryPage() {
               {totals.breakdown.map((b, i) => (
                 <div key={i} className="flex items-center justify-between px-3 py-2 text-xs font-mono">
                   <span className="text-zinc-300">{b.module} · {b.material}</span>
-                  <span className="text-zinc-400">€ {b.cost.toLocaleString()} · {b.carbon} kg</span>
+                  <span className="text-zinc-400">₹ {b.cost.toLocaleString('en-IN')} · {b.carbon} kg</span>
                 </div>
               ))}
             </div>

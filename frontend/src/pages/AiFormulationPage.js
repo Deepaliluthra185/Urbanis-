@@ -193,7 +193,7 @@ function AgentOutput({ agent, result }) {
       <div>
         <p className="text-zinc-400 text-xs mb-3">{result.output}</p>
         <div className="grid grid-cols-2 gap-px bg-zinc-800 border border-zinc-800 mb-3">
-          <MiniStat label="CapEx" value={`€ ${(t.total_cost || 0).toLocaleString()}`} />
+          <MiniStat label="CapEx" value={`₹ ${(t.total_cost || 0).toLocaleString('en-IN')}`} />
           <MiniStat label="Carbon" value={`${(t.total_carbon || 0).toLocaleString()} kg`} />
           <MiniStat label="Floor area" value={`${t.floor_area || 0} m²`} />
           <MiniStat label="vs benchmark" value={`${t.carbon_saving_pct || 0}% ↓`} tone="text-green-400" />
@@ -202,7 +202,7 @@ function AgentOutput({ agent, result }) {
           {(t.breakdown || []).map((b, i) => (
             <div key={i} className="flex items-center justify-between text-[11px] font-mono border-b border-zinc-800/60 py-1">
               <span className="text-zinc-400">{b.module} · {b.material.split(" ")[0]}</span>
-              <span className="text-zinc-200">€ {b.cost.toLocaleString()}</span>
+              <span className="text-zinc-200">₹ {b.cost.toLocaleString('en-IN')}</span>
             </div>
           ))}
         </div>
