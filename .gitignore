@@ -81,8 +81,7 @@ memory/test_credentials.md
 # Mobile development
 android-sdk/
 
-# overlay black-box crash/user-report dumps — session data, never history
-**/.emergent/recordings/
+.emergent/
 frontend/node_modules/.cache/default-development/7.pack
 .env
 .env.*
