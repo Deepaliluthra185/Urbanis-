@@ -1,0 +1,198 @@
+{
+  "type": "FeatureCollection",
+  "name": "India Flood Risk Zones — CWC National Flood Atlas / NDMA Flood Hazard Atlas (North India)",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "metadata": {
+    "source": "Central Water Commission (CWC) National Flood Atlas India / NDMA Flood Hazard Atlas / ISRO Bhuvan LISS-IV Flood Mapping",
+    "standard": "NDMA Guidelines for Flood Risk Management 2008 / IS 2156 (Flood-proofing of Low-lying buildings)",
+    "coordinate_system": "WGS84 / EPSG:4326",
+    "coverage": "Punjab, Haryana, Himachal Pradesh foothills, Northern Rajasthan — river corridor focus",
+    "note": "Polygons represent simplified reference flood risk boundaries for pre-feasibility screening. Detailed hydrological study required for statutory submissions.",
+    "risk_levels": {
+      "HIGH": "Active floodplain within 100-year return period inundation boundary — habitable construction prohibited (Municipal Bylaw MB-22.7)",
+      "MEDIUM": "Flood-prone alluvial plain with 10–50 year return period risk — mitigation measures mandatory",
+      "LOW": "Occasionally waterlogged or flash-flood risk — standard drainage improvements sufficient"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "bbox": [75.0, 31.0, 75.8, 32.0],
+      "properties": {
+        "zone_id": "FRZ-PB-001",
+        "zone_name": "Beas River Active Floodplain",
+        "risk_level": "HIGH",
+        "risk_score": 3,
+        "zone_type": "Active River Floodplain — 100-year return period",
+        "drainage_basin": "Beas River Basin — Indus System",
+        "river": "Beas River (Vyas)",
+        "return_period": "100-year return period inundation boundary",
+        "catchment_area_km2": 20303,
+        "annual_flood_discharge_cumecs": 14900,
+        "inundation_depth_m": "1.5–4.0 m during extreme flood events",
+        "mitigation": "Construction PROHIBITED in high-risk zone per National Disaster Management Act 2005 and Municipal Bylaw MB-22.7. If unavoidable: plinth elevation minimum 1.5m above HFL, reinforced flood walls, emergency evacuation routes mandatory.",
+        "regulatory_ref": "Municipal Bylaw MB-22.7 / CWC Flood Zone Demarcation / NDMA Flood Risk Management Guidelines 2008",
+        "affected_districts": ["Hoshiarpur", "Kapurthala", "Gurdaspur"],
+        "last_major_flood_year": 2019,
+        "flood_frequency": "Moderate-high — 3–4 significant inundation events per decade",
+        "notes": "Beas is a snow-fed perennial river originating from Beas Kund (Rohtang). Flood peaks occur July–September during southwest monsoon. 1988 Beas flood caused extensive damage to Hoshiarpur and Jalandhar districts."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [75.0, 31.0],
+          [75.8, 31.0],
+          [75.8, 31.5],
+          [75.6, 31.8],
+          [75.2, 32.0],
+          [75.0, 31.8],
+          [75.0, 31.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "bbox": [74.0, 30.2, 75.5, 31.2],
+      "properties": {
+        "zone_id": "FRZ-PB-002",
+        "zone_name": "Sutlej River Floodplain Corridor",
+        "risk_level": "HIGH",
+        "risk_score": 3,
+        "zone_type": "Active River Floodplain — 100-year return period",
+        "drainage_basin": "Sutlej River Basin — Indus System",
+        "river": "Sutlej River (Satluj)",
+        "return_period": "100-year return period inundation boundary",
+        "catchment_area_km2": 75000,
+        "annual_flood_discharge_cumecs": 29700,
+        "inundation_depth_m": "0.5–3.5 m during extreme events",
+        "mitigation": "Construction PROHIBITED in active floodplain. Downstream of Bhakra Nangal dam — dam break scenario analysis required for all major infrastructure. Plinth elevation ≥ 1.2m above HFL mandatory.",
+        "regulatory_ref": "Municipal Bylaw MB-22.7 / Bhakra Beas Management Board (BBMB) Regulations / NDMA Flood Management",
+        "affected_districts": ["Ludhiana", "Ferozepur", "Faridkot", "Bathinda"],
+        "last_major_flood_year": 2023,
+        "flood_frequency": "High — 5+ significant events per decade due to monsoon and dam releases",
+        "notes": "Sutlej is the largest Punjab river, originating from Rakas Lake (Tibet). Significant flood risk managed by Bhakra Dam releases. 2023 flash floods caused major disruption in Ferozepur and Ludhiana districts."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [74.0, 30.2],
+          [75.5, 30.2],
+          [75.5, 30.8],
+          [75.2, 31.0],
+          [74.8, 31.2],
+          [74.0, 31.0],
+          [74.0, 30.2]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "bbox": [73.5, 30.5, 76.5, 32.5],
+      "properties": {
+        "zone_id": "FRZ-PB-003",
+        "zone_name": "Punjab Alluvial Plains — Regional Monsoon Flood Zone",
+        "risk_level": "MEDIUM",
+        "risk_score": 2,
+        "zone_type": "Alluvial Flood-Prone Plain — 10 to 50-year return period",
+        "drainage_basin": "Indo-Gangetic Alluvial Plain — Punjab Doab System",
+        "river": "Multiple — Ravi, Beas, Sutlej inter-doab drainage",
+        "return_period": "10–50 year return period inundation risk",
+        "catchment_area_km2": null,
+        "annual_flood_discharge_cumecs": null,
+        "inundation_depth_m": "0.1–0.8 m during heavy monsoon seasons",
+        "mitigation": "Plinth elevation minimum 600mm above natural ground level (per NBC 2016 Clause 5.3). Adequate surface drainage gradients (1:100 min). Waterproofing of substructure mandatory. Avoid basement levels without waterproofing.",
+        "regulatory_ref": "NBC 2016 Part 8 / IS 2156 Flood-Proofing / NDMA Urban Flood Management Guidelines",
+        "affected_districts": [
+          "Amritsar", "Gurdaspur", "Tarn Taran", "Kapurthala",
+          "Jalandhar", "Ludhiana (northern)", "Patiala", "Sangrur"
+        ],
+        "last_major_flood_year": 2023,
+        "flood_frequency": "Moderate — waterlogging and urban flooding during heavy monsoon (annual phenomenon in many areas)",
+        "notes": "The flat alluvial Punjab plains have very low drainage gradient, making flash flooding and waterlogging common during intense monsoon rainfall (July–September). Urban encroachment on natural drainage channels has increased risk. Amritsar city has experienced significant urban flooding in 2014, 2019, and 2023."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [73.5, 30.5],
+          [76.5, 30.5],
+          [76.5, 32.5],
+          [73.5, 32.5],
+          [73.5, 30.5]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "bbox": [72.5, 28.5, 75.5, 30.8],
+      "properties": {
+        "zone_id": "FRZ-RJ-001",
+        "zone_name": "Ghaggar-Hakra Seasonal Flood Corridor",
+        "risk_level": "MEDIUM",
+        "risk_score": 2,
+        "zone_type": "Seasonal / Ephemeral River Flood Zone — monsoon activated",
+        "drainage_basin": "Ghaggar-Hakra Drainage System — Sarasvati paleo-channel",
+        "river": "Ghaggar River (seasonal)",
+        "return_period": "5–25 year return period — episodic high-discharge events",
+        "catchment_area_km2": 46000,
+        "annual_flood_discharge_cumecs": 5200,
+        "inundation_depth_m": "0.3–2.0 m during extreme monsoon years",
+        "mitigation": "Avoid development within 500m of Ghaggar channel. Plinth elevation ≥ 0.9m above channel bed. Soil investigation mandatory due to saline/alkaline soils in Ghaggar depression.",
+        "regulatory_ref": "Haryana State Flood Control Board / Rajasthan State Disaster Management Authority",
+        "affected_districts": ["Sirsa", "Hanumangarh", "Ganganagar", "Bathinda (south)"],
+        "last_major_flood_year": 2010,
+        "flood_frequency": "Episodic — major floods every 5–15 years during strong monsoon years",
+        "notes": "Ghaggar is an ephemeral monsoon river flowing from Shivalik foothills. Channel can flash flood rapidly. Saline groundwater and poor drainage characterize much of this zone."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [72.5, 28.5],
+          [75.5, 28.5],
+          [75.5, 30.2],
+          [74.5, 30.8],
+          [73.5, 30.5],
+          [72.5, 30.0],
+          [72.5, 28.5]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "bbox": [76.0, 29.5, 79.5, 31.5],
+      "properties": {
+        "zone_id": "FRZ-UP-001",
+        "zone_name": "Upper Gangetic Plain — Yamuna-Hindon Doab",
+        "risk_level": "HIGH",
+        "risk_score": 3,
+        "zone_type": "Active Floodplain — multiple river confluence zone",
+        "drainage_basin": "Yamuna River Basin — Ganga System",
+        "river": "Yamuna, Hindon, Kali Nadi (West)",
+        "return_period": "100-year return period floodplain boundary",
+        "catchment_area_km2": 366223,
+        "annual_flood_discharge_cumecs": 17500,
+        "inundation_depth_m": "0.5–5.0 m (Delhi to Agra reach)",
+        "mitigation": "Construction PROHIBITED in active Yamuna floodplain (NGT Order 2015 / DDA regulations). Minimum 50m buffer from Yamuna channel mandatory. Basement waterproofing and anti-flotation measures for any development in adjacent zone.",
+        "regulatory_ref": "NGT Order 2015 (Yamuna Floodplain) / NDMA Guidelines / Delhi Master Plan 2041 / Municipal Bylaw MB-22.7",
+        "affected_districts": ["Delhi", "Faridabad", "Ghaziabad", "Noida", "Greater Noida", "Mathura", "Agra"],
+        "last_major_flood_year": 2023,
+        "flood_frequency": "High — major inundation 3–5 times per decade; 2023 floods worst in 45 years",
+        "notes": "Yamuna floodplain is a critical ecological zone. 2023 floods submerged large parts of Delhi including ITO, Raj Ghat, and Old Delhi. NGT has imposed strict construction prohibitions in zone. Encroachments remain a persistent problem."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [76.0, 28.0],
+          [79.5, 28.0],
+          [79.5, 31.5],
+          [77.5, 31.5],
+          [76.5, 30.8],
+          [76.0, 30.5],
+          [76.0, 28.0]
+        ]]
+      }
+    }
+  ]
+}

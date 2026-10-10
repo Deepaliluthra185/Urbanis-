@@ -1,0 +1,138 @@
+{
+  "type": "FeatureCollection",
+  "name": "India Seismic Zones — BIS IS 1893:2016 (North India / Punjab Focus)",
+  "crs": {
+    "type": "name",
+    "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" }
+  },
+  "metadata": {
+    "standard": "BIS IS 1893 (Part 1): 2016 — Criteria for Earthquake Resistant Design of Structures",
+    "revision": "Sixth Revision 2016",
+    "source": "Bureau of Indian Standards / National Disaster Management Authority (NDMA)",
+    "coverage": "North India — Punjab, Haryana, Himachal Pradesh, J&K, Delhi, Western UP, Rajasthan",
+    "coordinate_system": "WGS84 / EPSG:4326",
+    "note": "Polygon boundaries are representative reference polygons for pre-feasibility screening. Exact seismic zone boundaries per latest BIS gazetteer should be used for statutory submissions.",
+    "zones_included": ["Zone III", "Zone IV", "Zone V"]
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "bbox": [73.0, 34.0, 78.5, 37.5],
+      "properties": {
+        "zone": "Zone V",
+        "zone_number": 5,
+        "bis_code": "IS 1893:2016 (Part 1)",
+        "zone_factor_Z": 0.36,
+        "pga_g": 0.36,
+        "intensity": "IX and above (MSK Scale)",
+        "description": "Very High Damage Risk Zone — extreme seismicity. Covers J&K Union Territory highlands, Ladakh ranges, and the Himalayan arc suture zone above 34°N latitude. Historical events include 2005 Kashmir earthquake (Mw 7.6).",
+        "design_recommendation": "Mandatory IS 13920 ductile detailing for all RC frames. Base isolation recommended for critical infrastructure. Seismic coefficient method and Response Spectrum Method (RSM) both mandatory.",
+        "ground_motion_level": "PGA ≥ 0.36g (10% probability of exceedance in 50 years)",
+        "soil_amplification_note": "Soft alluvial soils amplify ground motion up to 3x. Site-specific response spectra required.",
+        "key_districts": ["Muzaffarabad", "Uri", "Leh", "Kargil", "Doda", "Kishtwar"],
+        "historical_events": [
+          "2005 Kashmir Earthquake — Mw 7.6 (>70,000 fatalities)",
+          "1905 Kangra Earthquake — Mw 7.8",
+          "1975 Kinnaur Earthquake — Mw 6.8"
+        ],
+        "region": "Himalayan Convergence Zone (J&K + Ladakh highlands)"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [73.0, 34.0],
+          [75.5, 34.0],
+          [76.0, 34.5],
+          [77.0, 34.5],
+          [77.5, 35.0],
+          [78.5, 35.0],
+          [78.5, 37.5],
+          [73.0, 37.5],
+          [73.0, 34.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "bbox": [72.0, 28.0, 80.5, 34.0],
+      "properties": {
+        "zone": "Zone IV",
+        "zone_number": 4,
+        "bis_code": "IS 1893:2016 (Part 1)",
+        "zone_factor_Z": 0.24,
+        "pga_g": 0.24,
+        "intensity": "VII–VIII (MSK Scale)",
+        "description": "High Damage Risk Zone — covers the Indo-Gangetic alluvial plains of Punjab, Haryana, Delhi NCT, HP Siwalik foothills, and northwestern Uttar Pradesh. The region sits on thick Quaternary alluvium overlying the Sub-Himalayan foredeep, making it highly susceptible to seismic amplification. Amritsar, Ludhiana, Chandigarh, Delhi, Dehradun fall within this zone.",
+        "design_recommendation": "IS 13920 ductile detailing mandatory for all multi-storey RC frames. Avoid soft/weak storey configurations. Foundation design per IS 1904 with seismic considerations. For buildings >15m: Response Spectrum Method mandatory.",
+        "ground_motion_level": "PGA 0.16g–0.24g (10% probability of exceedance in 50 years)",
+        "soil_amplification_note": "Deep alluvial deposits (Punjab doab) can amplify PGA by 1.5–2.5x. Liquefaction potential HIGH in saturated sandy zones near river floodplains.",
+        "key_districts": [
+          "Amritsar", "Ludhiana", "Jalandhar", "Patiala", "Chandigarh",
+          "Gurugram", "Delhi", "Meerut", "Dehradun", "Shimla",
+          "Ambala", "Rohtak", "Hoshiarpur", "Pathankot"
+        ],
+        "historical_events": [
+          "1905 Kangra Earthquake — felt strongly across Punjab plains",
+          "2001 Bhuj aftershocks — perceptible across North India",
+          "2015 Nepal Earthquake — strong shaking in Punjab/Delhi"
+        ],
+        "region": "Indo-Gangetic Plain — Punjab, Haryana, Delhi, HP Foothills, Western UP"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [72.0, 28.0],
+          [80.5, 28.0],
+          [80.5, 30.5],
+          [79.5, 31.0],
+          [78.5, 32.0],
+          [77.5, 33.0],
+          [76.0, 34.0],
+          [75.5, 34.0],
+          [73.0, 34.0],
+          [72.0, 34.0],
+          [72.0, 28.0]
+        ]]
+      }
+    },
+    {
+      "type": "Feature",
+      "bbox": [68.5, 22.0, 82.0, 28.5],
+      "properties": {
+        "zone": "Zone III",
+        "zone_number": 3,
+        "bis_code": "IS 1893:2016 (Part 1)",
+        "zone_factor_Z": 0.16,
+        "pga_g": 0.16,
+        "intensity": "VI–VII (MSK Scale)",
+        "description": "Moderate Damage Risk Zone — encompasses western Rajasthan, central Madhya Pradesh, Bihar plains, and eastern UP. The Aravalli fold belt and Vindhyan platform are relatively stable cratons. Lower seismicity than the Himalayan foreland, though capable of producing Mw 5.0–6.0 intraplate events.",
+        "design_recommendation": "IS 456 RCC with IS 13920 detailing for buildings >4 storeys or irregular configurations. Standard moment frame with adequate tie beam connections. Site investigation recommended for soft soil sites.",
+        "ground_motion_level": "PGA 0.10g–0.16g (10% probability of exceedance in 50 years)",
+        "soil_amplification_note": "Rajasthan aeolian sandy soils have moderate amplification. Alluvial river zones (Chambal, Betwa, Son) require liquefaction assessment.",
+        "key_districts": [
+          "Jaipur", "Jodhpur", "Bikaner", "Bhopal", "Indore",
+          "Gwalior", "Patna", "Agra", "Varanasi", "Allahabad"
+        ],
+        "historical_events": [
+          "1956 Bulandshahr Earthquake — Mw 6.7",
+          "1988 Bihar-Nepal Earthquake — Mw 6.9 (felt across Bihar plains)",
+          "1997 Jabalpur Earthquake — Mw 5.8"
+        ],
+        "region": "Rajasthan Plains, Vindhyan Platform, Bihar-UP Plains"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[
+          [68.5, 22.0],
+          [82.0, 22.0],
+          [82.0, 28.0],
+          [80.5, 28.0],
+          [72.0, 28.0],
+          [70.0, 26.0],
+          [68.5, 24.0],
+          [68.5, 22.0]
+        ]]
+      }
+    }
+  ]
+}
